@@ -56,7 +56,7 @@ Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaix
 ```bash
 ssh -i /mnt/c/Users/Muliro/Downloads/PROJETO.pem ec2-user@<IP-Público>
 ````
-https://github.com/MuriloPetri/Projeto-Linux-DevSecOps/issues/1#issue-3192768018
+![Image](https://github.com/user-attachments/assets/e41a2ab7-6668-4668-870b-d6a145ab0582)
 
 ## 🌐 Etapa 3 – Instalação e Configuração do Nginx
 
