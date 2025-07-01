@@ -194,7 +194,8 @@ Para o servidor iniciar novamente, usa:
 ````bash
 sudo systemctl start nginx
 ````
-
+Você receberá essa mensagem
+![Image](https://github.com/user-attachments/assets/4d4d71df-224e-4584-8ebf-33a6c27f419e)
 
 
 
