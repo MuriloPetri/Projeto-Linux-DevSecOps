@@ -48,8 +48,9 @@ Este projeto implementa um servidor web com monitoramento automático. Em caso d
 ## ✅ Etapa 1 – Instância EC2 
 
 1. Criei uma instância EC2.
-2. Gerei uma chave `.pem` para conexão SSH.
-3. Liberei a porta **80 (HTTP)** no **Security Group**.
+2. Usando Tags fornecidas nas dailys (Name - PB - JUN 2025) (CoastCenter - C092000024) (Project - PB - JUN 2025)
+3. Gerei uma chave `.pem` para conexão SSH.
+4. Liberei a porta **80 (HTTP)** no **Security Group**.
 
 Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaixo:
 ```bash
