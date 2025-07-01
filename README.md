@@ -189,6 +189,7 @@ Para testar o erro, e o bot avisar você no seu chat do telegram, usamos o coman
 ````bash
 sudo systemctl stop nginx
 ````
+![Image](https://github.com/user-attachments/assets/93a142f8-4bc8-4c87-bc64-22bf667b0412)
 
 Para o servidor iniciar novamente, usa:
 ````bash
