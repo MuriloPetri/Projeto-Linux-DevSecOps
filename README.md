@@ -113,13 +113,14 @@ send_alert() {
 HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" "$URL")
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
-# Registra resultado e envia alerta se o status não for 200
 if [ "$HTTP_STATUS" -ne 200 ]; then
     MESSAGE="⚠️ ALERTA ($TIMESTAMP): Servidor Nginx está com problema! Status HTTP: $HTTP_STATUS"
     echo "$MESSAGE" >> "$LOG_FILE"
     send_alert "$MESSAGE"
 else
-    echo "[$TIMESTAMP] Servidor OK - Status HTTP: $HTTP_STATUS" >> "$LOG_FILE"
+    MESSAGE="✅ OK ($TIMESTAMP): Servidor Nginx funcionando normalmente. Status HTTP: $HTTP_STATUS"
+    echo "$MESSAGE" >> "$LOG_FILE"
+    send_alert "$MESSAGE"   # <-- aqui, chama o envio para o Telegram
 fi
 ````
 
@@ -128,7 +129,7 @@ Logo em seguida, permitir a execução do script
 chmod +x ~/monitor.sh
 ````
 
-## ETAPA 5 - Criação do arquivo .env
+## ETAPA 5 - Criação do arquivo .env (Esconder dados sensíveis)
 
 ````bash
 nano ~/.env
