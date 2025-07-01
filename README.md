@@ -51,6 +51,7 @@ Este projeto implementa um servidor web com monitoramento automático. Em caso d
 2. Usando Tags fornecidas nas dailys (Name - PB - JUN 2025) (CoastCenter - C092000024) (Project - PB - JUN 2025)
 3. Gerei uma chave `.pem` para conexão SSH.
 4. Liberei a porta **80 (HTTP)** no **Security Group**.
+   ![Image](https://github.com/user-attachments/assets/e479c968-368d-4351-83cc-3040910601c9)
 
 Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaixo:
 ```bash
