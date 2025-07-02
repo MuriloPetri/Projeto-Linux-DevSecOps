@@ -55,7 +55,7 @@ Este projeto implementa um servidor web com monitoramento automático. Em caso d
 
 Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaixo:
 ```bash
-ssh -i /mnt/c/Users/Muliro/Downloads/PROJETO.pem ec2-user@<IP-Público>
+ssh -i /mnt/c/Users/Muliro/Downloads/(PAR-DE-CHAVE).pem ec2-user@<IP-Público>
 ````
 ![Image](https://github.com/user-attachments/assets/e41a2ab7-6668-4668-870b-d6a145ab0582)
 
@@ -193,7 +193,7 @@ Neste repositório, estou usando a cada 1 minuto, ele me retorna mensagem de err
 
 Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaixo:
 ```bash
-ssh -i /mnt/c/Users/Muliro/Downloads/PROJETO.pem ec2-user@<IP-Público>
+ssh -i /mnt/c/Users/Muliro/Downloads/(PAR-DE-CHAVE).pem ec2-user@<IP-Público>
 ````
 Para testar o erro, e o bot avisar você no seu chat do telegram, usamos o comando do Nginx:
 
