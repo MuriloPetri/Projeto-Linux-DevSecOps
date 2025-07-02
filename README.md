@@ -110,19 +110,29 @@ send_alert() {
         -d text="${MESSAGE}" > /dev/null
 }
 
-# Checa o status HTTP do servidor
-HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" "$URL")
-TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+# Loop infinito
+while true; do
+    HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" "$URL")
+    NGINX_STATUS=$(systemctl is-active nginx)
+    TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
-if [ "$HTTP_STATUS" -ne 200 ]; then
-    MESSAGE="⚠️ ALERTA ($TIMESTAMP): Servidor Nginx está com problema! Status HTTP: $HTTP_STATUS"
+    if [ "$HTTP_STATUS" -ne 200 ] || [ "$NGINX_STATUS" != "active" ]; then
+        MESSAGE="⚠️ ALERTA ($TIMESTAMP): Problema detectado!
+Status HTTP: $HTTP_STATUS
+Status do NGINX: $NGINX_STATUS"
+    else
+        MESSAGE="✅ OK ($TIMESTAMP): Servidor NGINX funcionando normalmente.
+Status HTTP: $HTTP_STATUS
+Status do NGINX: $NGINX_STATUS"
+    fi
+
     echo "$MESSAGE" >> "$LOG_FILE"
     send_alert "$MESSAGE"
-else
-    MESSAGE="✅ OK ($TIMESTAMP): Servidor Nginx funcionando normalmente. Status HTTP: $HTTP_STATUS"
-    echo "$MESSAGE" >> "$LOG_FILE"
-    send_alert "$MESSAGE"   # <-- aqui, chama o envio para o Telegram
-fi
+
+    # Aguarda 30 segundos antes de repetir
+    sleep 30
+done
+
 ````
 
 Logo em seguida, permitir a execução do script
