@@ -34,7 +34,7 @@ Antes de criar a instância EC2, foi configurada uma infraestrutura de rede pers
 
 ### 🔸 Par de Chaves
 
-- Nome do par de chaves: `.pem`
+- Nome do par de chaves: `.pem` (CRIE O SEU NOME DO ARQUIVO)
 - Usado para acesso SSH via terminal WSL (UBUNTU 24.04.1 LTS)
 
 
