@@ -195,6 +195,16 @@ Conecte-se à instância via WSL (UBUNTU 24.04.1 LTS), através do comando abaix
 ```bash
 ssh -i /mnt/c/Users/Muliro/Downloads/(PAR-DE-CHAVE).pem ec2-user@<IP-Público>
 ````
+
+Para o servidor iniciar, usa:
+````bash
+sudo systemctl start nginx
+````
+
+Você receberá essa mensagem quando reiniciar o nginx
+![Image](https://github.com/user-attachments/assets/4d4d71df-224e-4584-8ebf-33a6c27f419e)
+
+
 Para testar o erro, e o bot avisar você no seu chat do telegram, usamos o comando do Nginx:
 
 ````bash
@@ -203,13 +213,6 @@ sudo systemctl stop nginx
 Você receberá essa mensagem quando parar o nginx 
 ![Image](https://github.com/user-attachments/assets/93a142f8-4bc8-4c87-bc64-22bf667b0412)
 
-
-Para o servidor iniciar novamente, usa:
-````bash
-sudo systemctl start nginx
-````
-Você receberá essa mensagem quando reiniciar o nginx
-![Image](https://github.com/user-attachments/assets/4d4d71df-224e-4584-8ebf-33a6c27f419e)
 
 
 
